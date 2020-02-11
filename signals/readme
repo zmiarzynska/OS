@@ -1,0 +1,67 @@
+A few of the different signals known in UNIX environment. Different action is taken depend on which one appeared.
+
+POLISH version:
+
+Systemy Operacyjne, zestaw 2: Sygnaly.
+=======================================
+
+Zawartosc:
+========== 
+Katalog "zestaw2" sklada sie z 3 programow glownych oraz jednego pomocniczego (procinfo),biblioteki procinfo, pliku Makefile, pliku tekstowego z odpowiedziami na pytania oraz README.
+
+Programy wchodzace w sklad katalogu:
+====================================
+
+    I. Program ustawiajacy obsluge sygnalow, modyfikujacy sposob w jaki proces zareaguje na sygnal
+      Sklada sie z jednego modulu
+      1) obsluga.c - program glowny
+ 
+   II. Program, ktory ma za zadanie najpierw utworzyc nowy proces, nastepnie otworzyc kolejny program funkcja execl, a wowczas z programu macierzystego wyslac sygnal podany w argumencie przy pomocy funkcji kill 
+      Sklada sie z:
+      1) wysylaj.c - program glowny
+      2) obsluga.c - poprzedniego programu
+
+
+  III. Program, ktory ma za zadanie uruchomic grupe kilku procesow, a nastepnie wysylac sygnal do calej grupy przy pomocy funkcji kill
+       Sklada sie z : 
+       1) grupa.c - program glowny
+       2) obsluga.c
+
+
+
+
+
+===================================================================
+Jak uruchomic programy: 
+
+Katalog zawiera program Makefile do kompilacji i linkowania wyzej wymienionych programow, a takze do czyszczenia z plikow tymczasowych o rozszerzeniu .o i .x 
+
+ Aby skompilowac i zlinkowac programy nalezy uzyc komendy
+    make 
+
+-> Aby uruchomic I. program nalezy wykonac komende: 
+   ./kopiuj.x <nazwa programu kopiowanego> <nazwa programu docelowego>
+
+-> Aby uruchomic kazdy kolejny program nalezy wykonac komende:
+   ./<nazwa programu>.x
+
+ 
+ Aby wyczyscic z plikow tymczasowych nalezy uzyc komendy
+    make clean
+
+
+
+
+====================================================================
+
+Cztery wybrane sygnaly:
+-SIGKILL - powoduje zabicie procesu 
+-SIGSTOP - powoduje zatrzymanie procesu 
+obu sygnalow nie mozna zignorowac ani przechwycic 
+-SIGTERM - programowe zakończenie procesu (zadanie zakonczenia). jest wysylany domyslnie do procesow, gdy uzyje sie polecenia kill , a takze podczas wylaczania calego systemu aby zakonczyc aktywne procesy.
+-SIGALRM - budzik. -sygnal jest wysylany aby obudzic proces. domyslna akcja jest zakonczenie procesu.
+przerwanie z klawiatury - ctrl+C
+
+sekwencja wyjscia z klawiatury ctrl+\
+
+sekwencja zakonczenia z klawiatury - ctrl+Z
