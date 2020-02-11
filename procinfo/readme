@@ -1,1 +1,19 @@
 Basic information about process
+
+Polish below
+Zawartosc:
+==========
+Katalog sklada sie z programu procinfo.c oraz bibioteki procinfo.h
+
+
+I.   Program wypisujacy identyfikatory UID, GID, PID, PPID i PGID oraz nazwe danego programu.
+      Sklada sie on z 
+      1) procinfo.h - deklaracji funkcji
+      2) procinfo.c - definicji funkcji
+      3) main.c - programu glownego wywolujacego funkcje procinfo
+
+
+      
+
+
+
