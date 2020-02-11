@@ -1,0 +1,6 @@
+Dane w pliku magazyn . txt
+beda pobierane
+
+jako surowiec 	z pliku producenta do pliku konsumenta
+
+=========
