@@ -1,1 +1,7 @@
 C Program copies text file to another with simple read and write functions. 
+
+Polish version below:
+ I.   Program kopiujacy zawartosc jednego programu do drugiego.
+      Program sklada sie z jednego modulu
+      1) kopiuj.c  - program glowny.
+ 
